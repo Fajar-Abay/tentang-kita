@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang Kita</title>
+  <link rel="icon" href="images/love-icon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    .modal {
+      transition: all 0.3s ease-in-out;
+    }
+    /* Loading bar animation */
+    @keyframes loading-bar {
+      0% { left: -100%; width: 100%; }
+      50% { left: 25%; width: 50%; }
+      100% { left: 100%; width: 0; }
+    }
+    .loading-bar {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background-color: #db2777; /* pink-600 */
+      animation: loading-bar 1.5s infinite;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-pink-50 text-gray-800 relative overflow-x-hidden">
+
+  <!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-pink-500">Tentang Kita</h1>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6">
+      <a href="#tentang" class="text-gray-600 hover:text-pink-500 transition">Tentang</a>
+      <a href="#galeri" class="text-gray-600 hover:text-pink-500 transition">Pap Imut Kamu</a>
+      <a href="#harapan" class="text-gray-600 hover:text-pink-500 transition">Harapan</a>
+      <a href="#quotes" class="text-gray-600 hover:text-pink-500 transition">Quotes</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <button id="menu-btn" class="md:hidden text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+    <a href="#tentang" class="block text-gray-600 hover:text-pink-500 py-2">Tentang</a>
+    <a href="#galeri" class="block text-gray-600 hover:text-pink-500 py-2">Pap Imut Kamu</a>
+    <a href="#harapan" class="block text-gray-600 hover:text-pink-500 py-2">Harapan</a>
+    <a href="#quotes" class="block text-gray-600 hover:text-pink-500 py-2">Quotes</a>
+  </div>
+</nav>
+
+<!-- Script Toggle -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-pink-100 via-pink-200 to-pink-300 text-center py-28 px-6 md:px-12 overflow-hidden">
+  <!-- Background Ornamen -->
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pink-paper.png')] opacity-20"></div>
+  
+  <!-- Konten Utama -->
+  <div class="relative z-10 max-w-4xl mx-auto rounded-xl p-10 bg-white/70 backdrop-blur-lg shadow-xl" data-aos="fade-up">
+    <h2 class="text-5xl md:text-6xl font-extrabold text-pink-700 mb-6 drop-shadow-md">
+      Kisah Kita
+    </h2>
+    <p class="text-xl md:text-2xl text-pink-900 leading-relaxed mb-8 italic font-light">
+      Semua momen ini aku simpan. <br class="hidden md:block" />
+      Untuk kita. 🌸
+    </p>
+    <a href="#tentang" 
+       class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-3 rounded-full shadow-md transition 
+       duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pink-300"
+       data-aos="zoom-in" data-aos-delay="200"
+    >
+      Lihat Cerita
+    </a>
+  </div>
+</section>
+
+<!-- Tentang Kita -->
+<section id="tentang" class="relative bg-pink-50 py-20 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Teks -->
+    <div data-aos="fade-right">
+      <h3 class="text-4xl font-extrabold text-pink-700 mb-6">Tentang Kita</h3>
+      <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        Semua berawal dari <span class="text-pink-500 font-semibold">tawa kecil</span>, obrolan ringan, hingga menjadi <span class="italic">kisah</span> yang aku simpan baik-baik.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed italic">
+        Terima kasih untuk setiap kenangan yang pernah hadir. Semoga ia tak sekadar lewat, tapi abadi dalam hati.
+      </p>
+    </div>
+
+    <!-- Gambar -->
+    <div class="relative group" data-aos="fade-left">
+      <div class="overflow-hidden rounded-xl shadow-xl transform group-hover:scale-105 transition duration-500">
+        <img src="images/kita-berdua.jpg" alt="Kita Berdua" class="w-full h-auto object-cover rounded-xl" />
+      </div>
+      <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-pink-500 text-sm font-semibold px-4 py-1 rounded-full shadow-md">
+        momen yang gak akan kulupa.
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="bg-white py-16 px-4">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-pink-600" data-aos="zoom-in">Pap Imut Dari Kamu</h3>
+      <p class="text-gray-600 mt-2" data-aos="fade-up">Beberapa kenangan yang tak tergantikan 💖</p>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Gambar Galeri: sama tinggi, object-fit cover -->
+      <img src="images/foto1.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 1" data-aos="fade-up">
+      <img src="images/foto2.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 2" data-aos="fade-up">
+      <img src="images/foto3.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 3" data-aos="fade-up">
+      <img src="images/foto4.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 4" data-aos="fade-up">
+      <img src="images/foto5.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 5" data-aos="fade-up">
+      <img src="images/foto6.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 6" data-aos="fade-up">
+      <img src="images/foto7.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 7" data-aos="fade-up">
+      <img src="images/foto8.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 8" data-aos="fade-up">
+      <img src="images/foto9.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 9" data-aos="fade-up">
+      <img src="images/foto10.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 10" data-aos="fade-up">
+      <img src="images/foto11.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 11" data-aos="fade-up">
+      <img src="images/foto12.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 12" data-aos="fade-up">
+      <img src="images/foto13.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 13" data-aos="fade-up">
+      <img src="images/foto14.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 14" data-aos="fade-up">
+      <img src="images/foto15.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 15" data-aos="fade-up">
+      <img src="images/foto16.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 16" data-aos="fade-up">
+      <img src="images/foto17.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 17" data-aos="fade-up">
+      <img src="images/foto18.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 18" data-aos="fade-up">
+      <img src="images/foto19.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 19" data-aos="fade-up">
+      <img src="images/foto20.jpg" class="gallery-img w-full h-48 rounded-lg shadow hover:scale-105 transition-transform duration-300 cursor-pointer object-cover" alt="Foto 20" data-aos="fade-up">
+    </div>
+  </section>
+<!-- Harapan -->
+<section id="harapan" class="bg-gradient-to-br from-pink-100 via-pink-200 to-pink-300 py-20 px-6 md:px-12 rounded-3xl shadow-xl my-16">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-6 drop-shadow-sm">
+      Harapan 🌸
+    </h3>
+    <p class="text-lg md:text-xl text-gray-800 italic leading-loose mb-4">
+      Aku harap... jika suatu saat kita bukan lagi dua orang yang saling menggenggam,
+      <br class="hidden md:block" />
+      setidaknya kita adalah dua hati yang pernah mendoakan diam-diam.
+    </p>
+    <p class="text-base text-gray-700 font-light">
+      Semoga semesta tak lupa, bahwa pernah ada dua jiwa yang saling percaya,
+      <br class="hidden md:block" />
+      bahkan saat semuanya terasa tidak pasti.
+    </p>
+  </div>
+</section>
+
+ <!-- Quotes -->
+<section id="quotes" class="bg-pink-50 py-16 px-6 md:px-10 rounded-3xl shadow-md max-w-4xl mx-auto my-12" data-aos="fade-up">
+  <div class="text-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-6 w-10 h-10 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.17 6C5.39 6 4 7.57 4 9.5S5.39 13 7.17 13H9v2H5.5A1.5 1.5 0 0 0 4 16.5v2A1.5 1.5 0 0 0 5.5 20H10v-7a4 4 0 0 0-4-4h-.83zM17.17 6C15.39 6 14 7.57 14 9.5S15.39 13 17.17 13H19v2h-3.5A1.5 1.5 0 0 0 14 16.5v2A1.5 1.5 0 0 0 15.5 20H20v-7a4 4 0 0 0-4-4h-.83z"/>
+    </svg>
+    <p class="text-2xl md:text-3xl font-semibold italic text-pink-700 leading-relaxed mb-4">
+      “Cinta adalah cerita yang tak pernah usang,<br class="hidden md:block" />
+      bahkan ketika jarak memisahkan, hati tetap berdekatan.”
+    </p>
+    <p class="text-pink-500 text-sm font-medium mt-4">— Dari Aku untuk Kamu 💖</p>
+  </div>
+</section>
+
+  <!-- Modal Image Viewer -->
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 modal">
+    <div id="loader" class="w-48 h-4 bg-pink-300 rounded overflow-hidden relative mb-4">
+      <div class="loading-bar"></div>
+    </div>
+    <img id="modalImage" alt="Preview Foto" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg hidden transition-transform duration-300 scale-90" />
+    <button id="closeModal" class="absolute top-4 right-6 text-white text-4xl font-bold hover:text-pink-400 transition">&times;</button>
+  </div>
+
+<!-- Footer -->
+<footer class="bg-pink-50 text-center py-8 px-4 text-sm text-gray-500 mt-20 border-t border-pink-200">
+  <p class="mb-2">
+    Dibuat dengan 💖 oleh <span class="text-pink-500 font-medium">Aku</span> untuk <span class="text-pink-500 font-medium">Kamu</span>
+  </p>
+  <p class="italic text-xs text-pink-400">Kenangan ini mungkin sederhana, tapi penuh arti. 🌷</p>
+  <p class="mt-2">&copy; 2025 | Semua rasa ini tak akan hilang begitu saja.</p>
+</footer>
+
+  <!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const loader = document.getElementById('loader');
+    const closeModalBtn = document.getElementById('closeModal');
+    const galleryImgs = document.querySelectorAll('.gallery-img');
+
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modalImg.classList.add('hidden');
+        loader.style.display = 'block';
+
+        // Start loading image
+        const src = img.src;
+        modalImg.src = src;
+
+        modalImg.onload = () => {
+          loader.style.display = 'none';
+          modalImg.classList.remove('hidden');
+          modalImg.classList.add('scale-100');
+        };
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modalImg.classList.remove('scale-100');
+      modalImg.classList.add('scale-90');
+    });
+
+    // Close modal on outside click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modalImg.classList.remove('scale-100');
+        modalImg.classList.add('scale-90');
+      }
+    });
+  </script>
+</body>
+</html>
